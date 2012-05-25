@@ -87,5 +87,6 @@
 	<classpathentry kind="lib" path="thirdparty/xj3dm10/jars/xj3d-xml-util.jar"/>
 	<classpathentry kind="lib" path="thirdparty/xj3dm10/jars/xj3d-xml.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="thirdparty/jars/org.eclipse.swt.gtk.linux.x86_3.7.2.v3740f.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
