@@ -1,0 +1,89 @@
+SECTION virtual_goniometer
+##################################
+#Sydney BL19b
+holds Coldstream Telescope Baseplate
+ 
+SECTION Coldstream
+##################################
+filename       devices/Sydney/coldstream.wrl
+Pickable       no
+Collidable     devices/Sydney/coldstream.wrl
+
+SECTION Telescope
+##################################
+filename       devices/Sydney/telescope.wrl
+Pickable       no
+Collidable     devices/Sydney/telescope.wrl
+
+SECTION Baseplate
+##################################
+filename       devices/Sydney/bl19b_baseplate.wrl
+Pickable       no
+Collidable     no
+holds Collimator Twotheta Omega
+
+SECTION Collimator
+##################################
+filename       devices/Sydney/collimator_simple.wrl
+Pickable       no
+Collidable     devices/Sydney/collimator_simple.wrl
+
+SECTION Twotheta
+##################################
+filename       devices/Sydney/ttheta.wrl
+AxisDirection  0 0 -1
+AxisLocation   0.00 0.00 0.0
+MinValue       -90
+MaxValue       90
+Pickable       yes
+Collidable     no
+Motor          twotheta
+Rotational     yes
+holds Detector
+
+SECTION Detector
+##################################
+filename       devices/Sydney/detector_simple.wrl
+AxisDirection  1 0 0
+AxisLocation   0.00 0.00 0.0
+ActualPosition 0.02
+Pickable       yes
+Collidable     devices/Sydney/detector_simple.wrl
+Motor          Detector
+Rotational     no
+
+SECTION Omega
+##################################
+filename       devices/Sydney/omega.wrl
+AxisDirection  0 0 -1
+AxisLocation   0.00 0.00 0.0
+Pickable       yes
+Collidable     devices/Sydney/omega.wrl
+Colliding      yes
+Motor          Omega
+Rotational     yes
+holds Kappa
+
+SECTION Kappa
+##################################
+filename       devices/Sydney/kappa.wrl
+AxisDirection  -0.76604444311897803520239265055542 0 0.64278760968653932632264340990726
+AxisLocation   0.00 0.00 0.0
+Pickable       yes
+Collidable     devices/Sydney/kappa.wrl
+Colliding      yes
+Motor          Kappa
+Rotational     yes
+holds Phi
+
+SECTION Phi
+##################################
+filename       devices/Sydney/phi.wrl
+AxisDirection  0 0 -1
+AxisLocation   0.00 0.00 0.0
+Pickable       yes
+Collidable     devices/Sydney/phi.wrl
+Colliding      yes
+Motor          Phi
+Rotational     yes
+

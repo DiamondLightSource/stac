@@ -1,0 +1,161 @@
+SECTION virtual_goniometer
+##################################
+
+#minidiff with hampton 90 degree kappa arm
+holds MainFrameSLS Camera Beamstop Detector Xflash
+ 
+
+SECTION Calibpin
+##################################
+filename       devices/calib_pin.wrl
+Pickable       no
+Collidable     no devices/calib_pin.wrl
+Colliding      yes
+holds CalibPeak
+
+SECTION CalibPeak
+##################################
+filename       devices/calib_peak.wrl
+Pickable       no
+Collidable     no devices/calib_peak.wrl
+Colliding      yes
+
+
+
+SECTION Camera
+##################################
+filename       devices/camera.wrl
+Pickable       no
+Collidable     devices/collision_camera2.wrl
+
+SECTION Beamstop
+##################################
+filename       devices/beamstop.wrl
+AxisDirection  0 1 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no devices/beamstop.wrl
+Motor          Beamstop
+Rotational     no
+
+
+SECTION Detector
+##################################
+filename       devices/detector.wrl
+AxisDirection  0 0 1
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Detector
+Rotational     no
+Collidable     devices/collision_detector.wrl
+
+
+SECTION Xflash
+##################################
+filename       devices/xflash.wrl
+AxisDirection  0.7444631095438562 0.20936840339201263 0.6339870268280271
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Xflash
+Rotational     no
+Collidable     no devices/xflash.wrl
+
+
+
+####################################################### 
+#
+#   SLS
+#
+####################################################### 
+
+
+SECTION MainFrameSLS
+##################################
+filename       devices/mainframe_blue.wrl
+Pickable       no
+Collidable     no
+holds OmegaSLS
+
+SECTION OmegaSLS
+##################################
+filename       devices/phi.wrl
+AxisDirection  -1 0 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no
+Motor          Z
+MinValue       -.01
+MaxValue       .03 
+Rotational     no
+holds XYtable_baseSLS
+
+SECTION XYtable_baseSLS
+##################################
+filename       devices/basexy.wrl
+AxisDirection  -1 0 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no
+Motor          Omega
+Rotational     yes
+holds XYtable_YSLS
+
+SECTION XYtable_YSLS
+##################################
+filename       devices/y.wrl
+AxisDirection  0 1 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no
+Motor          Y
+MinValue       -.01
+MaxValue       .01 
+Rotational     no
+holds XYtable_XSLS
+
+SECTION XYtable_XSLS
+##################################
+filename       devices/x.wrl
+AxisDirection  0 0 1
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no
+Motor          X
+MinValue       -.01
+MaxValue       .01 
+Rotational     no
+holds simple_head
+
+SECTION simple_head
+##################################
+filename       devices/simple_head.wrl
+Pickable       no
+Colliding      no
+holds kappa_base
+
+SECTION kappa_base
+##################################
+filename       devices/SLS/kappa_base.wrl
+Pickable       no
+Collidable    devices/SLS/kappa_base.wrl
+Colliding      yes
+holds kappa_arm
+
+SECTION kappa_arm
+##################################
+filename       devices/SLS/kappa.wrl
+AxisDirection  -1 1 0
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Kappa
+Rotational     yes
+Collidable    devices/SLS/kappa.wrl
+Colliding      yes
+holds Pin
+
+SECTION Pin
+##################################
+filename       devices/pin.wrl
+Pickable       no
+Collidable    devices/pin.wrl
+Colliding      yes

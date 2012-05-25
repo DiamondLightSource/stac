@@ -1,0 +1,231 @@
+#VRML V2.0 utf8
+WorldInfo {
+ title "beamstop"
+ info ["This Web3D Content was created with Flux Studio, a Web3D authoring tool"
+ "www.mediamachines.com"
+ "File produced by AccuTrans 3D"]
+}
+## Vizthumbnail  Thumb_collimator_wrl32351401194873673.jpg
+DEF Collimator Group {
+ children [
+  Shape {
+   appearance Appearance {
+    material DEF COLLIMATOR_MAT Material {
+     ambientIntensity .5
+     diffuseColor .75 .55 .1
+     shininess .2
+     specularColor .3 .3 .3
+     transparency 0
+     emissiveColor 0 0 0
+    }
+   }
+  }
+  Transform {
+   children [
+    Group {
+     children [
+      Transform {
+       translation -.1042 0 0
+       rotation 0 0 1 1.57
+       children [
+        Shape {
+         appearance Appearance {
+          material USE COLLIMATOR_MAT
+         }
+         geometry Cylinder {
+          height 0.180
+          radius 0.004
+          top FALSE
+          bottom FALSE
+         }
+        }
+       ]
+      }
+      Transform {
+       translation -.225 0 0
+       rotation 1 0 0 1.571
+       children [
+        Shape {
+         appearance Appearance {
+          material USE COLLIMATOR_MAT
+         }
+         geometry Cylinder {
+          height 0.030
+          radius 0.025
+         }
+        }
+       ]
+      }
+      Transform {
+       translation -.14 0 0
+       children [
+        Shape {
+         appearance Appearance {
+          material USE COLLIMATOR_MAT
+         }
+         geometry Box {
+          size .03 .04 .035
+         }
+        }
+       ]
+      }
+      Transform {
+       translation -.105 0 0
+       rotation 1 0 0 1.571
+       children [
+        Shape {
+         appearance Appearance {
+          material USE COLLIMATOR_MAT
+         }
+         geometry Box {
+          size .02 .03 .03
+         }
+        }
+       ]
+      }
+      Transform {
+       translation -.165 0 0
+       rotation 1 0 0 1.571
+       children [
+        Shape {
+         appearance Appearance {
+          material USE COLLIMATOR_MAT
+         }
+         geometry Box {
+          size .01 .02 .02
+         }
+        }
+       ]
+      }
+      Transform {
+       translation -.18 0 0
+       rotation 1 0 0 1.571
+       children [
+        Shape {
+         appearance Appearance {
+          material USE COLLIMATOR_MAT
+         }
+         geometry Box {
+          size .01 .025 .025
+         }
+        }
+       ]
+      }
+      Transform {
+       translation -.1445 0 .025
+       children [
+        Shape {
+         appearance Appearance {
+          material USE COLLIMATOR_MAT
+         }
+         geometry Box {
+          size .025 .03 .015
+         }
+        }
+       ]
+      }
+      DEF beamstop Group {
+       children [
+        Transform {
+         translation -.142 -.026 -.04725
+         children [
+          Shape {
+           appearance Appearance {
+            material USE COLLIMATOR_MAT
+           }
+           geometry Box {
+            size .03 .022 .06
+           }
+          }
+         ]
+        }
+        Transform {
+         translation -.089 -.026 -.07
+         children [
+          Shape {
+           appearance Appearance {
+            material USE COLLIMATOR_MAT
+           }
+           geometry Box {
+            size .096 .022 .015
+           }
+          }
+         ]
+        }
+        Transform {
+         translation -.0185 -.02 -.0725
+         rotation 0 0 1 1.57
+         children [
+          Shape {
+           appearance Appearance {
+            material USE COLLIMATOR_MAT
+           }
+           geometry Cylinder {
+            height 0.045
+            radius 0.002
+            top FALSE
+            bottom FALSE
+           }
+          }
+         ]
+        }
+        Transform {
+         translation .009 -.0075 -.0725
+         children [
+          Shape {
+           appearance Appearance {
+            material USE COLLIMATOR_MAT
+           }
+           geometry Box {
+            size .01 .035 .01
+           }
+          }
+         ]
+        }
+        Transform {
+         translation .0125 0 0
+         rotation 0 0 1 1.57
+         children [
+          Shape {
+           appearance Appearance {
+            material USE COLLIMATOR_MAT
+           }
+           geometry Cylinder {
+            height 0.005
+            radius 0.002
+            top FALSE
+           }
+          }
+         ]
+        }
+        Transform {
+         children [
+          Shape {
+           appearance Appearance {
+            material USE COLLIMATOR_MAT
+           }
+           geometry TriangleSet {
+            colorPerVertex FALSE
+            normalPerVertex FALSE
+            coord Coordinate {
+             point [
+               .015 0 0
+               .005 -.001 -.075
+               .015 -.001 -.075
+               .015 0 0
+               .015 .001 -.075
+               .005 .001 -.075
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

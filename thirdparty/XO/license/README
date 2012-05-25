@@ -1,0 +1,57 @@
+######################################################################
+XO: Crystal Orientation tools
+Copyright (C) 2005, Pierre Legrand (see LICENSE)
+######################################################################
+
+This is the first (alpha) release (0.2.99) of XO, a set of tools
+to handle Crystal Orientations.
+
+Please remember that XO, like Python, comes with neither a price tag
+nor any warranty (see the file LICENSE for details). I use it for my
+own work, and I consider it reasonably stable, but your mileage may
+vary.
+
+If you find bugs with XO, please tell me! And, if you improve something,
+please send me the modified version. I cannot promise extensive support
+(I am a scientist, not a programmer, and much less a software distributor!),
+but I'll do my best.
+
+
+Installation
+============
+
+Prerequisites: Python 2.1 or higher. Also work with jython 2.1 or higher.
+Just add the XO-0.2.99/bin path to work PATH variable.
+This new version of XO uses the pycgtypes mat3 and vec3 (part of the cgkit:
+see cgkit.sf.net for more details). It does not depend any more on Numeric
+Python.
+
+
+Web site
+========
+
+The XO home page can be found at (to be updated):
+http://www.synchotron-soleil.fr/bioxtal/kappa
+
+
+Documentation
+=============
+
+A brief XO documentation is included in the "doc" directory.
+All XO programs have an help (-h or --help) option that describes usage
+and options.
+
+Third party software used
+=========================
+
+The mat3 and vec3 classes are coming from the Python Computer Graphics
+Kit v1.2.0 by Matthias Baas (see http://cgkit.sourceforge.net).
+
+License
+=======
+
+XO is licensed under the GNU Lesser Public License. See the file
+LICENSE for the text of this license. The pycgtypes library (everything in
+the directory src/pycgtypes) is not part of XO and therefore not
+subject to this license. See src/pycgtypes/license.txt for details.
+

@@ -1,0 +1,119 @@
+#VRML V2.0 utf8
+WorldInfo {
+ title "beamstop"
+ info ["This Web3D Content was created with Flux Studio, a Web3D authoring tool"
+ "www.mediamachines.com"
+ "File produced by AccuTrans 3D"]
+}
+## Vizthumbnail  Thumb_kappa_wrl31656561194873603.jpg
+DEF Kappa-base Group {
+ children [
+  Shape {
+   appearance Appearance {
+    material DEF KAPPABLOCK_MAT Material {
+     ambientIntensity .5
+     diffuseColor .75 .55 .1
+     shininess .2
+     specularColor .3 .3 .3
+     transparency 0
+     emissiveColor 0 0 0
+    }
+   }
+  }
+  Transform {
+   translation 0 0 .096
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE KAPPABLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.040
+      radius 0.031
+     }
+    }
+   ]
+  }
+  Transform {
+   translation -.0312 0 .096
+   children [
+    Shape {
+     appearance Appearance {
+      material USE KAPPABLOCK_MAT
+     }
+     geometry Box {
+      size .058 .0616 .0395
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .1183
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE KAPPABLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.005
+      radius 0.037
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .123
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE KAPPABLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.015
+      radius 0.010
+     }
+    }
+   ]
+  }
+  Transform {
+   rotation 0 1 0 -.873
+   children [
+    Group {
+     children [
+      Transform {
+       translation 0 0 .0946
+       rotation 1 0 0 1.571
+       children [
+        Shape {
+         appearance Appearance {
+          material USE KAPPABLOCK_MAT
+         }
+         geometry Cylinder {
+          height 0.051
+          radius 0.031
+         }
+        }
+       ]
+      }
+      Transform {
+       translation .025 0 .0946
+       children [
+        Shape {
+         appearance Appearance {
+          material USE KAPPABLOCK_MAT
+         }
+         geometry Box {
+          size .05 .0616 .0513
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

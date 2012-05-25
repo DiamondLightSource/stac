@@ -1,0 +1,100 @@
+# GONIO Calibration Settings
+OmegaRot 5.9E-4 -7.9E-4 1.0
+KappaRot -0.28252 -0.29603 0.91244
+PhiRot 0.00673 -0.00958 0.99993
+KappaTrans 0.94621 0.34173 0.40991
+PhiTrans 0.27208 -0.20546 -0.0034
+KappaTransD -0.29095 -0.29243 0.91095
+PhiTransD 0.00664 -0.00752 0.99995
+
+SECTION STAC_GUI
+##################################
+STAC_GUI_language English
+
+SECTION STAC_GUI_English
+##################################
+V1 vSpindle
+V2 vBeam
+V1_TOOLTIP Vector vSpindle along the Spindle \n Vector vBeam in the plane of spindle and beam
+NEW_XTAL New Xtal
+NEW_XTAL_TOOLTIP Start to work with a new crystal \n Start with this button when a new crystal is mounted!
+
+SECTION STAC_GUI_Magyar
+##################################
+V1 vForgas
+V2 vSugar
+V1_TOOLTIP A vForgas vektor keruljon a forgastengellyel parhuzamos helyzetbe \n A vSugar vektor keruljon a Sugar es a forgastengely sikjaba. \n Amennyiben a Kozel be van kapcsolva, akkor iterativ kozelito szamitas vegzese szukseg eseten.
+NEW_XTAL UJ!
+NEW_XTAL_TOOLTIP Kiserlet kezdese egy uj kristallyal 
+
+SECTION Alignment_Plugins
+##################################
+Alignment_Plugin AlignmentPlugin_gonset
+
+SECTION Strategy_Plugins
+##################################
+Strategy_Plugin StrategyPlugin_strategy
+
+SECTION BCM_Plugins
+##################################
+BCM_Plugin BCMplugin_tine external
+#vBCM_configuration vBCM.dat_esrf
+
+SECTION Stac_BCMplugin_tine_external
+##################################
+# TINE URL:
+TINEURL /TEST/md2/device_0
+#TINEURL /VBS_cont/VBS_eqm_exp/VBS_dev_0
+# TINE ENS:
+# FecName,Protocol,FecNetwork,FecNode,IPaddr,Description,Location,Hardware,Responsible
+TINEENS ENS#0,2,0,0,192.168.53.219,Equip. Name Server,EMBL,Watchdog,Gobbo
+#TINEENS ENS#0,2,0,0,localhost,Equip. Name Server,VBS,Watchdog,Brockhauser
+# motorDescriptor:
+# eg:
+# motorName   motorName  multiplication factor    offset
+# (in STAC)   (in tango) (tangoValue=StacValue*f+offset)
+#
+X CentringTableX 1 0.0 cx
+Y CentringTableY 1 0.0 cy
+Z AlignmentTableY 1 0.0 y
+Omega Omega 1 0 omega
+Kappa Kappa 1 0 kappa
+Phi Phi 1 0 phi
+#
+# remark:
+# mulfac assumes that calibration has been done, and the
+# motors are aligned to the lab axes, otherwise
+# [XYZ] <-> [spec translation] would require a 3d transformation
+#
+GETMOTORLIMITS GetMotorLimits 0 0
+SYNC_MOVE SyncMoveMotors 0 0
+SAMPLELOOPTYPEPROP SampleLoopType
+SAMPLELOOPTYPE Needle
+CENTER_NEEDLE StartAutoSampleCentring 0 0
+CENTERNEEDLERADIUS CenterNeedleRadius 0 0
+STATUSREQUEST State 0 0
+STATUSOK 1 0 0
+STATUSMOVE 2 0 0
+CHECKPOSITION CheckPositionSafety
+
+SECTION Stac_BCMplugin_vBCM_vBCM.dat_esrf
+##################################
+vBCM_configuration vBCM.dat_esrf
+# motorDescriptor:
+# eg:
+# motorName   motorName  multiplication factor    offset
+# (in STAC)   (in tango) (tangoValue=StacValue*f+offset)
+#
+X   X   .001000   0.0010000000000004148   
+Y   Y   .001000   0.0048000000000002286   
+Z   Z   .001000   -0.007300000000000717   
+Omega     Omega                 1           0
+Kappa     Kappa                1           0
+Phi       Phi                   1           0
+#
+# remark:
+# mulfac assumes that calibration has been done, and the
+# motors are aligned to the lab axes, otherwise
+# [XYZ] <-> [spec translation] would require a 3d transformation
+#
+

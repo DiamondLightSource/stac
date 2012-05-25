@@ -1,0 +1,168 @@
+#VRML V2.0 utf8
+WorldInfo {
+ title "beamstop"
+ info ["This Web3D Content was created with Flux Studio, a Web3D authoring tool"
+ "www.mediamachines.com"
+ "File produced by AccuTrans 3D"]
+}
+## Vizthumbnail  Thumb_omega_wrl31405931194873578.jpg
+DEF omegaBlock Group {
+ children [
+  Shape {
+   appearance Appearance {
+    material DEF OMEGABLOCK_MAT Material {
+     ambientIntensity .5
+     diffuseColor .75 .55 .1
+     shininess .2
+     specularColor .3 .3 .3
+     transparency 0
+     emissiveColor 0 0 0
+    }
+   }
+  }
+  Transform {
+   translation 0 0 .17
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE OMEGABLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.053
+      radius 0.043
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .2025
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE OMEGABLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.011
+      radius 0.045
+     }
+    }
+   ]
+  }
+  DEF DRIP_PLATE Group {
+   children [
+    Transform {
+     translation -.005 0 .1394
+     children [
+      Shape {
+       appearance Appearance {
+        material USE OMEGABLOCK_MAT
+       }
+       geometry Box {
+        size .075 .22 .008
+       }
+      }
+     ]
+    }
+    Transform {
+     translation .035 0 .1394
+     scale 1 3.14 1
+     children [
+      Transform {
+       rotation 0 0 1 .785
+       children [
+        Shape {
+         appearance Appearance {
+          material USE OMEGABLOCK_MAT
+         }
+         geometry Box {
+          size .05 .05 .008
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+  Transform {
+   translation -.06125 0 .17
+   children [
+    Shape {
+     appearance Appearance {
+      material USE OMEGABLOCK_MAT
+     }
+     geometry Box {
+      size .1225 .0854 .0553
+     }
+    }
+   ]
+  }
+  Transform {
+   rotation 0 1 0 -.873
+   children [
+    Group {
+     children [
+      Transform {
+       translation .036 0 .1721
+       children [
+        Shape {
+         appearance Appearance {
+          material USE OMEGABLOCK_MAT
+         }
+         geometry Box {
+          size .072 .0854 .0964
+         }
+        }
+       ]
+      }
+      DEF dad_KAPPA_MOTOR_BLOCK Transform {
+       translation .055 -.0287 .1534
+       children [
+        DEF KAPPA_MOTOR_BLOCK Shape {
+         appearance Appearance {
+          material USE OMEGABLOCK_MAT
+         }
+         geometry Box {
+          size .073 .1639 .058
+         }
+        }
+       ]
+      }
+      Transform {
+       translation 0 0 .1721
+       rotation 1 0 0 1.571
+       children [
+        Shape {
+         appearance Appearance {
+          material USE OMEGABLOCK_MAT
+         }
+         geometry Cylinder {
+          height 0.096
+          radius 0.043
+         }
+        }
+       ]
+      }
+      Transform {
+       translation 0 0 .1239
+       rotation 1 0 0 1.571
+       children [
+        Shape {
+         appearance Appearance {
+          material USE OMEGABLOCK_MAT
+         }
+         geometry Cylinder {
+          height 0.005
+          radius 0.020
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
