@@ -7,9 +7,10 @@ export STAC_DEF_XDS=$STACDIR/test/dataset1/xds/CORRECT.LP
 
 
 #main classes
-export stacjars="$STACDIR/STAC.jar $STACDIR/plugins/ $STACDIR/src/"
+export stacjars="$STACDIR/plugins/ $STACDIR/bin/"
 #thirdparty
 export stacjars="`ls $STACDIR/thirdparty/jars/*.jar` $stacjars"
+export stacjars="`ls $STACDIR/thirdparty/java3d/lib/ext/*.jar` $stacjars"
 #ecpics plugin
 export stacjars="$STACDIR/thirdparty/EpicsClient/linux-x86/jca2.1.2/jca.jar $stacjars"
 #tango plugin
@@ -47,6 +48,11 @@ else
 	export LD_LIBRARY_PATH=$stacjavalibs:$LD_LIBRARY_PATH
 fi
 
+ARCH=`uname -i`
+if [ "$ARCH" == "x86_64" ]; then
+	ARCH=amd64
+fi
+export LD_LIBRARY_PATH=$STACDIR/thirdparty/java3d/lib/$ARCH:$LD_LIBRARY_PATH
 
 #
 # DNA settings
