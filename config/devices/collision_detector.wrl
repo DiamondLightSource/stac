@@ -1,0 +1,73 @@
+#VRML V2.0 utf8
+
+# This file was authored with Blender (http://www.blender.org/)
+# Blender version 242
+# Blender file collision_elements.blend
+# Exported using VRML97 exporter v1.55 (2006/01/17)
+
+
+NavigationInfo {
+	headlight TRUE
+	visibilityLimit 0.0
+	type ["EXAMINE", "ANY"]
+	avatarSize [0.25, 1.75, 0.75]
+} 
+ 
+Background {
+	groundColor 0.057 0.221 0.4
+	skyColor 0.057 0.221 0.4
+}
+
+Transform {
+ rotation 1.0 0.0 0.0 1.57
+ children [
+DEF OB_Cube Transform {
+	translation 0.0 0.0 0.0
+	rotation 1.0 0.0 0.0 0.0
+	scale 1.0 1.0 1.0
+	children [
+		DEF ME_Cube Group {
+			children [
+				Shape {
+					appearance Appearance {
+				material Material {
+            		transparency 1.000000
+#					diffuseColor 0.607843 0.729412 0.815686
+#					ambientIntensity 0.200000
+#					specularColor 0.607843 0.729412 0.815686
+#					emissiveColor 0.000000 0.000000 0.000000
+#					shininess 0.312500
+#					transparency 0.000000
+				}
+					}
+					geometry IndexedFaceSet {
+						solid TRUE
+						coord DEF coord_Cube Coordinate {
+							point [
+-0.166437357664 0.580787539482 0.166437476873
+ -0.166437357664 0.580787539482 -0.166437417269
+ 0.166437402368 0.580787539482 -0.166437268257
+ 0.166437134147 0.580787539482 0.166437357664
+ -0.166437357664 -0.0082560479641 0.166437208652
+ -0.166437223554 -0.0082560479641 -0.166437417269
+ 0.166437402368 -0.0082560479641 -0.166437149048
+ 0.166437268257 -0.0082560479641 0.166437357664
+ 							]
+						}
+						
+						coordIndex [
+0 1 2 3 -1, 
+4 7 6 5 -1, 
+0 4 5 1 -1, 
+1 5 6 2 -1, 
+2 6 7 3 -1, 
+4 0 3 7 -1, 
+						]
+					}
+				}
+			]
+		}
+	]
+}
+]
+}

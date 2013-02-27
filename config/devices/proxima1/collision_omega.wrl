@@ -1,0 +1,76 @@
+#VRML V2.0 utf8
+
+# This file was authored with Blender (http://www.blender.org/)
+# Blender version 242
+# Blender file proxima1.blend
+# Exported using VRML97 exporter v1.55 (2006/01/17)
+
+
+NavigationInfo {
+	headlight FALSE
+	visibilityLimit 100.0
+	type ["EXAMINE", "ANY"]
+	avatarSize [0.25, 1.75, 0.75]
+} 
+ 
+Background {
+	groundColor 0.057 0.221 0.4
+	skyColor 0.057 0.221 0.4
+}
+
+DEF OB_Cube_002 Transform {
+	translation 0.0 0.0 0.0
+	rotation 0.507 -0.86 0.059 1.932
+	scale 1.0 1.0 1.0
+	children [
+		DEF ME_Cube_002 Group {
+			children [
+				Shape {
+					appearance Appearance {
+				material Material {
+            		transparency 1.000000
+#					diffuseColor 0.607843 0.729412 0.815686
+#					ambientIntensity 0.200000
+#					specularColor 0.607843 0.729412 0.815686
+#					emissiveColor 0.000000 0.000000 0.000000
+#					shininess 0.312500
+#					transparency 0.000000
+				}
+					}
+					geometry IndexedFaceSet {
+						solid TRUE
+						coord DEF coord_Cube_002 Coordinate {
+							point [
+0.0436429977417 0.133881032467 -0.0417341813445
+ 0.0438313893974 0.133948117495 0.0541967004538
+ -0.0387712083757 0.133923724294 0.0549929626286
+ -0.0389596000314 0.133856639266 -0.0409379191697
+ 0.0436725467443 0.189961016178 -0.0419404953718
+ 0.0438608825207 0.190028101206 0.0539903864264
+ -0.0387417152524 0.190003722906 0.0547866486013
+ -0.0389301069081 0.189936637878 -0.041144233197
+ -0.0386434756219 0.206688210368 0.0684580206871
+ 0.0439594276249 0.206753224134 0.0676966905594
+ -0.0381524525583 0.148166179657 0.119461640716
+ 0.0444504469633 0.148231208324 0.118700310588
+ 							]
+						}
+						
+						coordIndex [
+0 1 2 3 -1, 
+4 7 6 5 -1, 
+0 4 5 1 -1, 
+2 6 7 3 -1, 
+4 0 3 7 -1, 
+6 2 10 8 -1, 
+1 5 9 11 -1, 
+5 6 8 9 -1, 
+2 1 11 10 -1, 
+11 9 8 10 -1, 
+						]
+					}
+				}
+			]
+		}
+	]
+}

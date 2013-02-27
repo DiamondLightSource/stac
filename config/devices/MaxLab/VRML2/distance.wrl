@@ -1,0 +1,96 @@
+#VRML V2.0 utf8
+
+WorldInfo {
+  title "distance"
+  info  [ "File produced by AccuTrans 3D" ]
+}
+NavigationInfo {
+  type  [ "EXAMINE", "ANY" ]
+}
+DEF VP1 Viewpoint {
+  position 0.333784 0.295515 0.500601
+  orientation 0 0 1 0
+  fieldOfView 0.785398
+  description "Front"
+}
+DEF VP2 Viewpoint {
+  position 0.865395 0.295515 -0.03101
+  orientation 0 1 0 1.570796
+  fieldOfView 0.785398
+  description "Right"
+}
+DEF VP3 Viewpoint {
+  position 0.333784 0.295515 -0.562621
+  orientation 0 1 0 3.141592
+  fieldOfView 0.785398
+  description "Back"
+}
+DEF VP4 Viewpoint {
+  position -0.197827 0.295515 -0.03101
+  orientation 0 1 0 -1.570796
+  fieldOfView 0.785398
+  description "Left"
+}
+DEF VP5 Viewpoint {
+  position 0.333784 0.827126 -0.03101
+  orientation 1 0 0 -1.570796
+  fieldOfView 0.785398
+  description "Top"
+}
+DEF VP6 Viewpoint {
+  position 0.333784 -0.236096 -0.03101
+  orientation 1 0 0 1.570796
+  fieldOfView 0.785398
+  description "Bottom"
+}
+Transform {
+  children [
+    DEF distance Shape {
+      appearance Appearance {
+        material Material {
+          ambientIntensity 0.2
+          diffuseColor 0.1922 0.1922 0.1922
+          specularColor 1.0 1.0 1.0
+          emissiveColor 0 0 0
+          shininess 0.3445
+          transparency 0
+        }
+        texture NULL
+        textureTransform NULL
+      }
+      geometry IndexedFaceSet {
+        color NULL
+        coord Coordinate {
+          point [
+            0.331549 0.468283 0.14618,
+            0.335963 0.472719 -0.203765,
+            0.336019 0.122747 -0.2082,
+            0.331605 0.118311 0.141744,
+            0.431549 0.468283 0.14618,
+            0.435963 0.472719 -0.203765,
+            0.436019 0.122747 -0.2082,
+            0.431605 0.118311 0.141744,
+          ]
+        }
+        colorIndex [ ]
+        coordIndex [
+          2, 3, 0, -1,
+          0, 1, 2, -1,
+          6, 7, 4, 1,
+          4, 5, 6, 1,
+          2, 3, 6, -1,
+          6, 7, 3, -1,
+          2, 1, 5, -1,
+          2, 5, 6, -1,
+          1, 0, 5, -1,
+          5, 0, 4, -1,
+          3, 7, 0, -1,
+          0, 7, 4, -1,
+        ]
+        normal NULL
+        creaseAngle 0
+        solid TRUE
+      }
+    }
+  ]
+}

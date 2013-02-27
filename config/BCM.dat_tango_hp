@@ -1,0 +1,52 @@
+# GONIO Calibration Settings
+OmegaRot -0.00327 8.0E-5 0.99999
+KappaRot 0.30262 0.26858 0.91449
+PhiRot -0.01748 0.01845 0.99968
+KappaTrans 0.0 0.0 0.0
+PhiTrans 0.36688 0.87347 -0.00131
+KappaTransD 0.28982 -0.28869 0.9125
+PhiTransD -8.2E-4 0.00184 1.0
+
+SECTION Alignment_Plugins
+##################################
+Alignment_Plugin AlignmentPlugin_gonset
+
+SECTION Strategy_Plugins
+##################################
+Strategy_Plugin StrategyPlugin_strategy
+
+SECTION BCM_Plugins
+##################################
+BCM_Plugin BCMplugin_tango external
+#vBCM_configuration vBCM.dat_esrf
+
+SECTION Stac_BCMplugin_tango_external
+##################################
+# TANGO URL:
+#TANGOURL    tango://193.48.220.202:9999/EMBL/MicroDiff/General#dbase=no
+TANGOURL    tango://pc251:9999/EMBL/MicroDiff/General#dbase=no
+#source:
+#  CACHE        - 0
+#  CACHE_DEVICE - 1
+#  DEVICE       - 2
+SOURCE     1
+# motorDescriptor:
+# eg:
+# motorName   motorName  multiplication factor    offset
+# (in STAC)   (in tango) (tangoValue=StacValue*f+offset)
+#
+X   CentringTableXAxisPosition   -1   -0.3072   
+Y   CentringTableYAxisPosition   1   1.2239   
+Z   PhiTableYAxisPosition   -1   -1.5799   
+Omega     OmegaPosition                 1           0
+Kappa     KappaPosition                 1           0
+Phi       KappaPhiPosition              1           0
+#
+# remark:
+# mulfac assumes that calibration has been done, and the
+# motors are aligned to the lab axes, otherwise
+# [XYZ] <-> [spec translation] would require a 3d transformation
+#
+SYNC_MOVE     SyncMoveMotors     0   0
+STATUSREQUEST State              0   0
+STATUSOK      STANDBY            0   0

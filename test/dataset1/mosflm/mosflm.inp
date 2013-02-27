@@ -1,0 +1,18 @@
+ BEST ON 
+ #scanner marc
+ gain 0.4
+ synchrotron polar 0.99
+ dispersion  0.0002
+ divergence  0.001 0.001
+ genf genfile.gen
+ wavelength  0.97944
+ distance    165.00
+ beam  112.91  112.12
+ mosaic  0.5
+ directory       ../
+ template   Peb3_dc_1_###.mccd
+ extention  img
+ image 1  phi   0.00  to   0.50
+
+ go
+

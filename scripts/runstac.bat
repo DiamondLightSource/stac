@@ -1,0 +1,5 @@
+call setupstac.bat
+
+echo "START..."
+cd %RUNDIR%
+java -Dj3d.sharedstereozbuffer=true -Dj3d.stereo=PREFERRED -Xmx256M -DBCMDEF=%BCMDEF% -DSTACDIR=%STACDIR% -DSTAC_DEF_MOS_SETT=%STAC_DEF_MOS_SETT% -DSTAC_DEF_MOS_MAT=%STAC_DEF_MOS_MAT% -DSTAC_DEF_HKL=%STAC_DEF_HKL% -DSTAC_DEF_XDS=%STAC_DEF_XDS% stac.gui.StacGui
