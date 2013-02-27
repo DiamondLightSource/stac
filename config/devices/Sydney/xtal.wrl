@@ -1,0 +1,337 @@
+#VRML V2.0 utf8
+WorldInfo {
+ title "beamstop"
+ info ["This Web3D Content was created with Flux Studio, a Web3D authoring tool"
+ "www.mediamachines.com"
+ "File produced by AccuTrans 3D"]
+}
+## Vizthumbnail  Thumb_xtal_wrl32167961194873654.jpg
+PROTO Machine_axes [
+]
+{
+DEF machine_axes Group {
+ children [
+  Transform {
+   rotation 0 1 0 3.146
+   children [
+   ]
+  }
+ ]
+}
+}
+PROTO BL19b-baseplate [
+]
+{
+}
+PROTO ColdStream [
+]
+{
+}
+PROTO Telescope [
+]
+{
+}
+PROTO Detector [
+]
+{
+}
+PROTO KBtn-TThetaCircle [
+]
+{
+}
+PROTO Omega_Block [
+]
+{
+}
+PROTO Kappa_Base [
+]
+{
+}
+PROTO Phi_Block [
+]
+{
+}
+PROTO Crystal [
+]
+{
+}
+PROTO Collimator [
+]
+{
+}
+DEF Cryst Group {
+ children [
+  DEF TheCrystal Shape {
+   appearance Appearance {
+    material DEF Red Material {
+     ambientIntensity 0.200
+     shininess 0.200
+     diffuseColor 1 0 0
+    }
+   }
+   geometry TriangleSet {
+    ccw FALSE
+    normalPerVertex FALSE
+    coord Coordinate {
+     point [
+       0 0 -.008
+       -.003 .006 0
+       -.006 0 0
+       0 0 -.008
+       -.006 0 0
+       -.003 -.006 0
+       0 0 -.008
+       -.003 -.006 0
+       .003 -.006 0
+       0 0 -.008
+       .003 -.006 0
+       .006 0 0
+       0 0 -.008
+       .006 0 0
+       .003 .006 0
+       0 0 -.008
+       .003 .006 0
+       -.003 .006 0
+     ]
+    }
+   }
+  }
+  DEF TheCrystal_b Shape {
+   appearance Appearance {
+    material USE Red
+   }
+   geometry TriangleSet {
+    normalPerVertex FALSE
+    coord Coordinate {
+     point [
+       0 0 .008
+       -.003 .006 0
+       -.006 0 0
+       0 0 .008
+       -.006 0 0
+       -.003 -.006 0
+       0 0 .008
+       -.003 -.006 0
+       .003 -.006 0
+       0 0 .008
+       .003 -.006 0
+       .006 0 0
+       0 0 .008
+       .006 0 0
+       .003 .006 0
+       0 0 .008
+       .003 .006 0
+       -.003 .006 0
+     ]
+    }
+   }
+  }
+  DEF reciprocal_axes Group {
+   children [
+    Transform {
+     rotation 0 0 1 3.142
+     children [
+      DEF A_star Group {
+       children [
+        Group {
+         children [
+          Transform {
+           translation .1 0 0
+           rotation 1 0 0 -1.571
+           scale .03 .03 .03
+           children [
+            Shape {
+             appearance Appearance {
+              material Material {
+               ambientIntensity 0.200
+               shininess 0.200
+               diffuseColor .8 .8 .8
+               emissiveColor 1 1 0
+              }
+             }
+             geometry Text {
+              string "A*"
+              maxExtent 0.000
+              fontStyle FontStyle {
+               family "SERIF"
+               style "PLAIN"
+               justify ["BEGIN"
+               "BEGIN"]
+               size 1.000
+               spacing 1.000
+              }
+             }
+            }
+           ]
+          }
+         ]
+        }
+        Group {
+         children [
+          Shape {
+           appearance Appearance {
+            material Material {
+             emissiveColor 1 1 0
+             ambientIntensity .2
+             diffuseColor .8 .8 .8
+             shininess .2
+             specularColor 0 0 0
+             transparency 0
+            }
+           }
+           geometry IndexedLineSet {
+            colorPerVertex TRUE
+            colorIndex [
+            ]
+            coordIndex [
+            ]
+            coord Coordinate {
+             point [
+             0 0 0
+             .02 0 0
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+      DEF b_star Group {
+       children [
+        Group {
+         children [
+          Transform {
+           translation 0 -.1 0
+           rotation 1 0 0 -1.571
+           scale .03 .03 .03
+           children [
+            Shape {
+             appearance Appearance {
+              material Material {
+               ambientIntensity 0.200
+               shininess 0.200
+               diffuseColor .8 .8 .8
+               emissiveColor 1 1 0
+              }
+             }
+             geometry Text {
+              string "B*"
+              maxExtent 0.000
+              fontStyle FontStyle {
+               family "SERIF"
+               style "PLAIN"
+               justify ["BEGIN"
+               "BEGIN"]
+               size 1.000
+               spacing 1.000
+              }
+             }
+            }
+           ]
+          }
+         ]
+        }
+        Group {
+         children [
+          Shape {
+           appearance Appearance {
+            material Material {
+             emissiveColor 1 1 0
+             ambientIntensity .2
+             diffuseColor .8 .8 .8
+             shininess .2
+             specularColor 0 0 0
+             transparency 0
+            }
+           }
+           geometry IndexedLineSet {
+            colorPerVertex TRUE
+            colorIndex [
+            ]
+            coordIndex [
+            ]
+            coord Coordinate {
+             point [
+             0 0 0
+             0 -.02 0
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+      DEF c_star Group {
+       children [
+        Group {
+         children [
+          Transform {
+           translation 0 0 -.1
+           rotation 1 0 0 -1.571
+           scale .03 .03 .03
+           children [
+            Shape {
+             appearance Appearance {
+              material Material {
+               ambientIntensity 0.200
+               shininess 0.200
+               diffuseColor .8 .8 .8
+               emissiveColor 1 1 0
+              }
+             }
+             geometry Text {
+              string "C*"
+              maxExtent 0.000
+              fontStyle FontStyle {
+               family "SERIF"
+               style "PLAIN"
+               justify ["BEGIN"
+               "BEGIN"]
+               size 1.000
+               spacing 1.000
+              }
+             }
+            }
+           ]
+          }
+         ]
+        }
+        Group {
+         children [
+          Shape {
+           appearance Appearance {
+            material Material {
+             emissiveColor 1 1 0
+             ambientIntensity .2
+             diffuseColor .8 .8 .8
+             shininess .2
+             specularColor 0 0 0
+             transparency 0
+            }
+           }
+           geometry IndexedLineSet {
+            colorPerVertex TRUE
+            colorIndex [
+            ]
+            coordIndex [
+            ]
+            coord Coordinate {
+             point [
+             0 0 0
+             0 0 -.1
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

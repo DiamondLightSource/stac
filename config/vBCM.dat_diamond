@@ -1,0 +1,235 @@
+SECTION virtual_goniometer
+##################################
+#Dimaond Light Source
+holds Table Detector
+
+
+SECTION Table
+##################################
+filename       devices/Diamond/modify/1011744_prt.wrl
+holds FrontTable BackTable
+
+SECTION FrontTable
+##################################
+filename       devices/Diamond/modify/1011739_asm.wrl
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          GonioY
+Rotational     no
+holds Yag Gonio
+
+SECTION Yag
+##################################
+filename       devices/Diamond/modify/stp3381_e_prt.wrl
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Yag
+Rotational     no
+holds YagDev
+
+SECTION YagDev
+##################################
+filename       devices/Diamond/modify/stp3374_prt.wrl
+
+SECTION Gonio
+##################################
+filename       DUMMY
+AxisDirection  0 0 1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          GonioZ
+Rotational     no
+holds GonioX
+
+SECTION GonioX 
+##################################
+filename       devices/Diamond/modify/1036413_vrml_asm.wrl
+AxisDirection  -1 0 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Z
+Rotational     no
+holds Omega
+
+SECTION Omega
+##################################
+filename       devices/Diamond/modify/1036412_prt.wrl
+AxisDirection  -1 0 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Omega
+Rotational     yes
+holds CTableBase
+
+SECTION CTableBase
+##################################
+filename       devices/Diamond/modify/stp4869_stp_a2_prt.wrl
+holds CTableX
+
+SECTION CTableX
+##################################
+filename       devices/Diamond/modify/stp4869_stp_a1_prt.wrl
+AxisDirection  0 0 1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          X
+Rotational     no
+holds CTableY
+
+SECTION CTableY
+##################################
+filename       devices/Diamond/modify/stp4868_a_prt.wrl
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Y
+Rotational     no
+holds MK_Kappa
+
+SECTION MK_Kappa
+##################################
+filename       DUMMY
+AxisDirection  -0.91354545764 0.4067366430758 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Kappa
+Rotational     yes
+holds MK_Phi
+
+SECTION MK_Phi
+##################################
+filename       devices/Diamond/modify/1038928_prt.wrl
+AxisDirection  -1 0 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Phi
+Rotational     yes
+holds Pin
+
+SECTION Pin
+##################################
+filename       devices/pin_simple.wrl
+
+Pickable       no
+
+SECTION Calibpin
+##################################
+filename       devices/calib_pin.wrl
+Pickable       no
+Collidable     no devices/calib_pin.wrl
+Colliding      yes
+holds CalibPeak
+
+SECTION CalibPeak
+##################################
+filename       devices/calib_peak.wrl
+Pickable       no
+Collidable     no devices/calib_peak.wrl
+Colliding      yes
+AxisLocation   -0.0073 -0.0048 -0.001
+
+
+
+SECTION BackTable
+##################################
+filename       DUMMY
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          TableY
+Rotational     no
+holds BackPlate
+
+SECTION BackPlate
+##################################
+filename       devices/Diamond/modify/1011804_prt.wrl
+AxisDirection  0 0 1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          TableZ
+Rotational     no
+holds FlashSupp BstopZ Shutter
+
+SECTION FlashSupp
+##################################
+filename       devices/Diamond/modify/stp1653_prt.wrl
+holds Flash
+
+SECTION Flash
+##################################
+filename       devices/Diamond/modify/stp1652_prt.wrl
+AxisDirection  -0.6 0.3 0.3 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Flash
+Rotational     no
+
+SECTION BstopZ
+##################################
+filename       DUMMY
+AxisDirection  0 0 1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          BstopZ
+Rotational     no
+holds BstopX
+
+SECTION BstopX
+##################################
+filename       devices/Diamond/modify/1017165_asm.wrl
+AxisDirection  1 0 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          BstopX
+Rotational     no
+holds BstopY
+
+SECTION BstopY
+##################################
+filename       devices/Diamond/modify/1020151_prt.wrl
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          BstopY
+Rotational     no
+
+SECTION Shutter
+##################################
+filename       devices/Diamond/modify/1011852_asm.wrl
+holds ShutterTop
+
+SECTION ShutterTop
+##################################
+filename       devices/Diamond/modify/1011907_prt.wrl
+holds Camera 
+
+SECTION Camera
+##################################
+filename       devices/Diamond/modify/1016904_prt.wrl
+holds Collimator
+
+SECTION Collimator
+##################################
+filename       devices/Diamond/modify/1018922_asm.wrl
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Collimator
+Rotational     no
+
+
+SECTION Detector
+##################################
+filename       devices/detector.wrl
+InitialTrafo   1 0 0 0  0 1 0 0  0 0 1 0.1  0 0 0 1
+ActualPosition 0.1
+AxisDirection  0 0 1
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Detector
+Rotational     no
+Collidable     devices/collision_detector.wrl
+
+

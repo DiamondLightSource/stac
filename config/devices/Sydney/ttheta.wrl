@@ -1,0 +1,80 @@
+#VRML V2.0 utf8
+WorldInfo {
+ title "beamstop"
+ info ["This Web3D Content was created with Flux Studio, a Web3D authoring tool"
+ "www.mediamachines.com"
+ "File produced by AccuTrans 3D"]
+}
+## Vizthumbnail  Thumb_ttheta_wrl31269371194873564.jpg
+DEF TTheta Group {
+ children [
+  Shape {
+   appearance Appearance {
+    material DEF OMEGA_MAT Material {
+     ambientIntensity .5
+     diffuseColor .75 .55 .1
+     shininess .2
+     specularColor .3 .3 .3
+     transparency 0
+     emissiveColor 0 0 0
+    }
+   }
+  }
+  Transform {
+   translation 0 0 .2124
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE OMEGA_MAT
+     }
+     geometry Cylinder {
+      height 0.010
+      radius 0.092
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .2374
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE OMEGA_MAT
+     }
+     geometry Cylinder {
+      height 0.040
+      radius 0.100
+     }
+    }
+   ]
+  }
+  Transform {
+   translation .1275 0 .2374
+   children [
+    Shape {
+     appearance Appearance {
+      material USE OMEGA_MAT
+     }
+     geometry Box {
+      size .055 .06 .03
+     }
+    }
+   ]
+  }
+  Transform {
+   translation .295 0 .2139
+   children [
+    Shape {
+     appearance Appearance {
+      material USE OMEGA_MAT
+     }
+     geometry Box {
+      size .28 .06 .077
+     }
+    }
+   ]
+  }
+ ]
+}

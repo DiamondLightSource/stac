@@ -1,0 +1,96 @@
+SECTION virtual_goniometer
+##################################
+
+
+#MaxLAB
+holds ML_fundament1 ML_fundament2 ML__ta
+ 
+
+
+SECTION ML_fundament1
+##################################
+filename       devices/MaxLab/VRML2/fundament1.wrl
+Pickable       no
+Collidable     no
+
+SECTION ML_fundament2
+##################################
+filename       devices/MaxLab/VRML2/fundament.wrl
+Pickable       no
+Collidable     no
+holds ML_omega
+
+SECTION ML_omega
+##################################
+filename       devices/MaxLab/VRML2/omega.wrl
+AxisDirection  0 -1 0
+AxisLocation   -0.009 0.31 -0.0125
+Pickable       yes
+Collidable     devices/MaxLab/VRML2/omega.wrl
+Colliding      yes
+Motor          Omega
+Rotational     yes
+holds ML_kappa
+
+SECTION ML_kappa
+##################################
+filename       devices/MaxLab/VRML2/kappa.wrl
+AxisDirection  -0.70710678118654752440084436210485 -0.70710678118654752440084436210485 0
+AxisLocation   -0.1125 0.2205 -0.0095
+Pickable       yes
+Collidable     devices/MaxLab/VRML2/kappa.wrl
+Colliding      yes
+Motor          Kappa
+Rotational     yes
+holds ML_phi
+
+SECTION ML_phi
+##################################
+filename       devices/MaxLab/VRML2/phi.wrl
+AxisDirection  0 -1 0
+AxisLocation   -0.009 0.31 -0.0125
+Pickable       yes
+Collidable     devices/MaxLab/VRML2/phi.wrl
+Colliding      yes
+Motor          Phi
+Rotational     yes
+
+SECTION ML__ta
+##################################
+filename       devices/MaxLab/VRML2/_ta.wrl
+AxisDirection  0 -1 0
+AxisLocation   -0.009 0.31 -0.0125
+Pickable       yes
+Collidable     no
+Motor          Ta
+Rotational     yes
+holds ML_distance_1
+
+SECTION ML_distance_1
+##################################
+filename       devices/MaxLab/VRML2/distance_1.wrl
+ActualPosition 0.343
+AxisDirection  1 0 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no
+Motor          Detector
+MinValue       -0.1
+MaxValue       0.9 
+Rotational     no
+holds ML_distance2
+
+SECTION ML_distance2
+##################################
+filename       devices/MaxLab/VRML2/distance.wrl
+AxisDirection  -1 0 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     devices/MaxLab/VRML2/distance.wrl
+Motor          Distance
+MinValue       0
+MaxValue       0.05 
+Rotational     no
+
+
+

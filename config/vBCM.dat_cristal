@@ -1,0 +1,99 @@
+SECTION virtual_goniometer
+##################################
+#Soleil cristal
+holds Base
+
+
+SECTION Base
+##################################
+filename       devices/cristal/base.wrl
+Pickable       no
+Collidable     devices/cristal/base.wrl
+Colliding      no
+holds Gamma Mu
+
+SECTION Gamma
+##################################
+filename       devices/cristal/gamma.wrl
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Gamma
+Rotational     yes
+Collidable     devices/cristal/gamma.wrl
+Colliding      no
+holds Delta
+
+SECTION Delta
+##################################
+filename       devices/cristal/delta.wrl
+AxisDirection  0 0 -1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Delta
+Rotational     yes
+Collidable     devices/cristal/delta.wrl
+Colliding      no
+holds          Detector
+
+SECTION Mu
+##################################
+filename       devices/cristal/mu.wrl
+AxisDirection  0 1 0 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Mu
+Rotational     yes
+Collidable     devices/cristal/mu.wrl
+Colliding      no
+holds Omega
+
+SECTION Omega
+##################################
+filename       devices/cristal/omega.wrl
+AxisDirection  0 0 -1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Omega
+Rotational     yes
+Collidable     devices/cristal/omega.wrl
+Colliding      no
+holds Kappa
+
+SECTION Kappa
+##################################
+filename       devices/cristal/kappa.wrl
+AxisDirection  0 -0.76604 -0.64278
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Kappa
+Rotational     yes
+Collidable     devices/cristal/kappa.wrl
+Colliding      no
+holds Phi
+
+SECTION Phi
+##################################
+filename       devices/cristal/phi.wrl
+AxisDirection  0 0 -1
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Phi
+Rotational     yes
+Collidable     devices/cristal/phi.wrl
+Colliding      no
+
+SECTION Detector
+##################################
+filename       devices/detector.wrl
+InitialTrafo   0 0 -1 -0.3    0 1 0 0    1 0 0 0    0 0 0 1
+ActualPosition 0.3
+AxisDirection  -1 0 0
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Detector
+Rotational     no
+Collidable     devices/collision_detector.wrl
+Colliding      yes
+
+

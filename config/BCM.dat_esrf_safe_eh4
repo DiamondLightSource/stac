@@ -1,0 +1,37 @@
+# GONIO Calibration Settings
+OmegaRot -0.00172 -3.0E-4 1.0
+KappaRot -0.05039 -0.40725 0.91193
+PhiRot 0.00707 -0.00719 0.99995
+KappaTrans 0.0 0.0 0.0
+PhiTrans -0.30601 -0.01601 0.00391
+KappaTransD -0.02303 -0.40837 0.91252
+PhiTransD 0.01289 -0.00183 0.99992
+
+SECTION BCM_Plugins
+##################################
+BCM_Plugin BCMplugin_esrf_safe external
+#vBCM_configuration vBCM.dat_esrf
+
+SECTION Stac_BCMplugin_esrf_safe_external
+##################################
+# spec version:
+SPECVERSION    artemis2:eh4
+# motorDescriptor:
+# eg:
+# motorName   motorName  multiplication factor    offset    dialOffset
+# (in STAC)   (in spec) (specValue=StacValue*f+offset)   (user=dial+dialOffset)
+# 
+X sampx -1.0 0.184212534056 1.6348769999979806E-5
+Y sampy 1.0 1.49684468664 -2.1798369999936895E-5
+Z phiy 1.0 19.9994444444 0.0
+Omega phi 1.0 0.0 0.0
+Kappa kap1 1.0 0.0 -8.78904533413E-6
+Phi kap2 1.0 0.0 0.0
+# 
+# remark:
+# mulfac assumes that calibration has been done, and the
+# motors are aligned to the lab axes, otherwise
+# [XYZ] <-> [spec translation] would require a 3d transformation
+#
+INITSTRING     minikappa_init
+ 

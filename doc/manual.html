@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>STAC</title></head>
+<body>
+<div style="text-align: center;"><big><big><big>STAC IN A NUTSHELL</big></big></big><br>
+</div>
+<br>
+STAC can be used to perform crystal reorientation calculations, as
+well as multisweep data collection strategy calculations using
+different crystal orientations. It fascilitates the use of kappa
+goniometers. Although its GUI uses the traditional naming convention of
+kappa goniometers (Omega - that carries Kappa - that carries Phi), its
+abstract beamline control module (BCM) allows the effective use of any
+multi-axis goniometers. Since STAC comes with a built-in GUI, it can be
+used by the beamline users directly as a standalone application being
+connected by its BCM to the beamline control system.<br>All the calculations depend on the calibration of the instrument which can be performed using the built-in GUI in Operator Mode.<br>
+<br><br><a name="UserMode"></a>
+<big><big>USER mode:</big></big><br><br>When STAC comes up, it always
+starts in USER Mode, assuming that STAC has been properly installed and <a href="#Configuration">configured</a>, and that the instrument is already prepared
+and calibrated. In case, it has not been performed, one has to switch
+to <a href="#OperatorMode">Operator Mode</a> and do the calibration before starting to use the application. <br><br>Using
+the GUI, one can always go to the help page for a more detailed
+description of the functionalities, and the explanation for the use of
+the GUI elements.<br><br>
+<img alt="" src="images/help.png" style="width: 1000px; height: 700px;"><br>
+<br>When STAC comes up, it automatically opens the tab "Input for
+Re-Orientation", because this is the panel where all the inital
+information about the crystal in study should be filled. <br><br>Button "NEW XTAL":<br>When
+starting to work with a new xrystal, to avoid any confusion, the button
+"NEW XTAL" must be pushed to delete all fields related to previous
+experiment.<br><br>Normally, before reorienting a crystal, the actual
+orientation must be determined. To do so, one can collect diffraction
+images,&nbsp;and then index those images.<br>&nbsp;<br>Field Descriptor:<br>If
+the Data Collection application, prepares an interface file for STAC
+with all the required information, it can be Loaded. The content of
+this file must follow a specification and should like like to following
+example:<br><br><div style="margin-left: 40px;"><span style="font-family: monospace;">#STAC OM descriptor (by Sandor Brockhauser)</span><br style="font-family: monospace;"><span style="font-family: monospace;">#==========================================</span><br style="font-family: monospace;"><span style="font-family: monospace;">OMFILENAME /home/STAC/test/dataset1/mosflm/bestfile.par</span><br style="font-family: monospace;"><span style="font-family: monospace;">OMTYPE&nbsp;&nbsp;&nbsp;&nbsp; mosflm</span><br style="font-family: monospace;"><span style="font-family: monospace;">STAC_Omega&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0000</span><br style="font-family: monospace;"><span style="font-family: monospace;">STAC_Kappa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0000</span><br style="font-family: monospace;"><span style="font-family: monospace;">STAC_Phi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0000</span><br style="font-family: monospace;"><span style="font-family: monospace;">STAC_X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0000</span><br style="font-family: monospace;"><span style="font-family: monospace;">STAC_Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0000</span><br style="font-family: monospace;"><span style="font-family: monospace;">STAC_Z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0000</span><br style="font-family: monospace;"></div><br>When loading the data collection descriptor file, STAC automatically fetches the information about <br><ul><li>the file with the OrientationMatrix and its type. STAC supports OK files from</li><ul><li><span style="font-weight: bold;">MOSFLM</span>: <span style="font-style: italic;">bestfile.par</span> (that is written if the keyword BEST ON is issued during the mosflm session)</li><li><span style="font-weight: bold;">XDS</span>: <span style="font-style: italic;">CORRECT.LP</span></li><li><span style="font-weight: bold;">DENZO</span>: <span style="font-style: italic;">.x</span> file</li></ul><li>goniometer
+rotation and centring settings (Omega-Kappa-Phi-X-Y-Z) used during the
+data collection. Note that motor names and positions must be written
+according to the specification of the BCM plugin configured for
+STAC.&nbsp; </li></ul>If this file is not available, the information
+field can also be manually field. Using the button "GetPos", the STAC
+queries the actual motor positions from the goniometer using the
+configured BCM plugin. Not to loose this global information, the data
+can be saved into the referenced data collection descriptor file by
+pushing the button "Rewrite".<br><br>
+<img alt="" src="images/input_descriptor.png" style="width: 1000px; height: 700px;"><br>
+<br>When this information is filled, STAC is ready for the reorientation calculation.<br><br>
+<img alt="" src="images/input_OM.png" style="width: 1000px; height: 700px;"><br>
+<br><br>The next point is to specify the desired new orientations. A
+few "standard alignments" are offered by default, but one can manually
+add any new orientations, or delete any selected orientation lines. The
+table follows the old GONSET naming conventions:<br><ul><li><span style="font-weight: bold;">v1</span>: the crystal vector to be aligned with the spindle</li><li><span style="font-weight: bold;">v2</span>: the crystal vector to lay in the plane of the beam and the spindle<br>Note that for both columns, the valid entries include:</li><ul><li>a,b,c,a*,b*,c* - <span style="font-weight: bold;">special vectors</span></li><li>(h,k,l)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">reciprocal space vectors</span></li><li>[a,b,c]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">real space vectors</span></li></ul><li><span style="font-weight: bold;">close</span>: if checked, STAC is approaching the requested v1 alignment even if it would not be geometrically possible to exactly align <span style="font-weight: bold;"><br></span></li></ul><br><br>
+<img alt="" src="images/input_close.png" style="width: 1000px; height: 700px;"><br>
+<br>The following buttons help to add additional specific orientations to the table:<br><ul><li>"Smallest
+Oscillation": the orientations those offer data collections for certain
+completeness (100%, 99%, and 98%) with the minimum oscillation&nbsp;</li><li>"Get
+a New from File": the orientation of a crystal previously measured.
+When referencing the old OM file, its type is automatically determined
+from its extension. &nbsp;</li></ul>From
+the prepared table, optionally, the interesting lines can be selected.
+Or leaving the whole table unseleted, all the entries will be processed
+when pushing the button "Next" on bottom.<br><br><br>
+<img alt="" src="images/input_optosc.png" style="width: 1000px; height: 700px;"><br>
+<br>In case some requested orientations are not available, an information window is popping up:<br><br>
+<img alt="" src="images/alignment_error.png" style="width: 1225px; height: 222px;"><br>
+<br>The available orientations are then displayed in the automatically broght up tab "Vector Evaluation".<br><br>
+<img alt="" src="images/alignment_close_astar.png" style="width: 1000px; height: 700px;"><br>
+<br>During the run of the application, one can go back to any previous
+panel any perform new calculations those are then added to the list of
+possibilities. By pushing the button "ClearTable", the old entries can
+also be deleted. <br><br>
+<img alt="" src="images/alignment_select.png" style="width: 1000px; height: 700px;"><br>
+<br>By selecting a single datum line, the gonio can automatically
+driven there by pushing the button "Mv Sel". Or any aribtrary gonio
+settings can also be tested by filling the fields below and pushing the
+button "Mv Edit". <br>Note that STAC tries to keep the precentered
+point in the center when changing the orientation. Hence, STAC uses the
+centring values registered as XYZ in the tab "Input for
+Re-Orientation", and the necessary new translation settings are
+displayed in the colums "Trans". <br><br><br><big><span style="font-weight: bold;">WARNING</span></big><br>Be careful, with these buttons and avoid any settings that would cause<span style="font-weight: bold;"> collision</span>!<br><br>From
+the prepared table, optionally, the interesting lines can be
+selected. Or leaving the whole table unseleted, all the entries will be
+processed when pushing the button "Next" on bottom. The calculated
+strategy sweeps specific to the certain orinetations are then
+automatically displayed in the panel Strategy. For the same strategy
+ID, there can be multiple sweeps registered. It is because in some
+cases, the alignment caused blind region does not allow a complete data
+collectino. In those cases, a second sweep is calculated to collected
+the missed reflections at the original crystal orientation. Pushing the
+button "Finish" simply generates a text file in the current working
+directory with the details of the data collection strategy sweeps
+selected.<br>
+<br>
+<br>
+<img alt="" src="images/strategies.png" style="width: 1000px; height: 700px;"><br>
+<br><br>In certain situations (especially when the crystal cannot be
+indexed), it can be usefull to be able to manipulate the gonio settings
+manually. The panel "Motor Access" give full control possibilities for
+this:<br><br>
+<img alt="" src="images/motor_syncmove.png" style="width: 1000px; height: 700px;"><br>
+<br><a name="DNAMode"></a>
+DNA integration:<br>
+<br>
+<br><a name="OperatorMode"></a>
+<big><big>OPERATOR mode:<br><br></big></big>To calibrate the goniometer, the Operator mode must be first enabled on the panel Options:<br><big><big><br></big></big>
+<img alt="options" src="images/options.png" style="width: 1000px; height: 700px;"><br>
+<br>Both, the Translation Calibration and the Rotation Calibration
+offer Wizzards "Auto TransCalib", and "AutoRotCalib" respectively.
+Using them, clear instructions lead through the process of the
+calibration.<br><br>
+<img alt="transcalib" src="images/transcalib.png" style="width: 1000px; height: 700px;"><br>
+<br><pre>TransCalib:<br>+ put a calib pin with a nail<br>+ [Move_to_(0;0;0)]: move to the datum (0;0;0)<br>+ center the calib pin<br>+ [reset XYZ Translations to 0]<br>+ [Move Phi]: select a phi datum<br>+ center the calib pin (using only X, Y, Z motors: sampx,sampy,phiy)<br>+ [get XYZ Translation] for phi rotation<br>+ [Move Kappa]: select a kappa datum<br>+ center the calib pin (using only X, Y, Z motors: sampx,sampy,phiy)<br>+ [get XYZ Translation] for kappa rotation<br>+ [Calculate]: performes the calibration calciulation. The results are show on the bottom<br>  in manually editable texfields. A comparism to the previous calibration is also presented.<br>+ [Update]: Update the gonio calibration settings.<br></pre><br><br><br>
+<img alt="rotcalib" src="images/rotcalib.png" style="width: 1000px; height: 700px;"><br>
+<br><pre>RotCalib:<br>+ put a calib pin with a crystal<br>+ [goniohead_init]: phi_init;mv phi 9;set phi 9;kappa_init;kappa_init (gonioinitstring in BCM.dat)<br>+ [Move_to_(0;0;0)]: move to the datum (0;0;0)<br>+ center the crystal + get images (at oscillation start = 0) + index them<br>+ set the matrice descriptior file on the GUI (0;0;0)<br>+ [Move_to_(0;0;P)]: select a phi movement in the TextField, and apply the button<br>+ get images (at oscillation start = 0) + index them<br>+ set the matrice descriptior file on the GUI (0;0;P)<br>+ [Move_to_(0;K;P)]: select a kappa movement in the TextField, and apply the button<br>+ get images (at oscillation start = 0) + index them<br>+ set the matrice descriptior file on the GUI (0;K;P)<br>+ [Move_to_(O;K;P)]: select an omega movement in the TextField, and apply the button<br>+ get images (at oscillation start = Omega/!/) + index them<br>+ set the matrice descriptior file on the GUI (O;K;P)<br>+ [Calculate]: performes the calibration calciulation. The results are show on the bottom<br>  in manually editable texfields. A comparism to the previous calibration is also presented.<br>+ [Update]: Update the gonio calibration settings.<br></pre><br>The result of the calibration is then registered in the head section of the STAC configuration file.<br><br><br><a name="Configuration"></a>
+<big><big>Configuration:</big></big>&nbsp;<br><br>The configuration can
+be done by mnually editing the file $BCMDEF, normally
+"STACinstallDir/config/BCM.dat", or in some &nbsp;installation:
+"~/config/BCM.dat": <br>
+<br>
+<pre style="margin-left: 80px; font-style: italic;"># GONIO Calibration Settings<br>OmegaRot -0.00327 8.0E-5 0.99999<br>KappaRot 0.30262 0.26858 0.91449<br>PhiRot -0.01748 0.01845 0.99968<br>KappaTrans -0.06564 0.65576 -0.2298<br>PhiTrans 0.1051 0.26123 2.4E-4<br>KappaTransD -0.28427 0.29161 0.91332<br>PhiTransD 8.7E-4 -0.00125 1.0<br># BCM plugin selection<br><big style="font-weight: bold;">BCM_Plugin BCMplugin_esrf_safe</big><br># spec version:<br><big><span style="font-weight: bold;">SPECVERSION    artemis2:sandor</span></big><br># motorDescriptor:<br># eg:<br># motorName   motorName  multiplication factor    offset    dialOffset<br># (in STAC)   (in spec) (specValue=StacValue*f+offset)   (user=dial+dialOffset)<br># <br>X         sampx           -1          0                    0<br>Y         sampy            1          0                    0<br>Z         phiy             1          0                    0<br>Omega      phi              1         0                    0<br>Kappa      kap1             1         0                    0<br>Phi        kap2             1         0                    0<br># <br># remark:<br># mulfac assumes that calibration has been done, and the<br># motors are aligned to the lab axes, otherwise<br># [XYZ] &lt;-&gt; [spec translation] would require a 3d transformation<br>#<br>INITSTRING     minikappa_init</pre>
+<br>
+<br>
+<br>
+<br>
+</body></html>

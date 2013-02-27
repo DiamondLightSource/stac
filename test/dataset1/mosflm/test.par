@@ -1,0 +1,24 @@
+# parameter file for BEST 
+TITLE          .
+DETECTOR       MARC
+SITE           Not set
+DIAMETER         224.86
+PIXEL          0.0731950
+ROTAXIS        0.00 0.00 1.00 FAST
+POLAXIS        0.00 0.00 1.00
+GAIN               0.40
+CMOSAIC            0.35
+PHISTART           0.00
+PHIWIDTH           0.50
+DISTANCE         165.00
+WAVELENGTH      0.77944
+POLARISATION    0.99000
+SYMMETRY       P222
+UB              0.001170  0.014885  0.005122
+               -0.007283  0.003816 -0.009425
+               -0.007937 -0.001305  0.005605
+CELL              62.05    78.31    99.90  90.00  90.00  90.00
+RASTER           15  17   9   5   5
+SEPARATION      0.430  0.510
+BEAM            112.935  112.201
+# end of parameter file for BEST
