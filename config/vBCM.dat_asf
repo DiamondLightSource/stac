@@ -1,0 +1,102 @@
+SECTION virtual_goniometer
+##################################
+#Australian Synchrotron Facility PX1
+holds Gonio cbox Detector
+
+
+SECTION Gonio
+##################################
+filename       devices/ASF_px1/omega_base.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+holds Omega
+
+SECTION Omega
+##################################
+filename       devices/ASF_px1/omega.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+AxisDirection  0 0 -1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Omega
+Rotational     yes
+holds Kappa_base
+
+SECTION Kappa_base
+##################################
+filename       devices/ASF_px1/kappa_base.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+Collidable     devices/ASF_px1/collision_kappabase.wrl
+Colliding      yes
+holds KappaArm
+
+SECTION KappaArm
+##################################
+filename       devices/ASF_px1/kappa.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+AxisDirection  0 0.8666 -0.5 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Kappa
+Rotational     yes
+Collidable     devices/ASF_px1/collision_kappa.wrl
+Colliding      yes
+holds Phi_supp
+
+SECTION Phi_supp
+##################################
+filename       devices/ASF_px1/phi_supp.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+AxisDirection  0 0 -1 
+Pickable       yes
+Motor          Phi_supp
+Rotational     no
+Collidable     devices/ASF_px1/collision_phi.wrl
+Colliding      yes
+holds PhiMot
+
+SECTION PhiMot
+##################################
+filename       devices/ASF_px1/phi.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+AxisDirection  0 0 -1 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Phi
+Rotational     yes
+
+SECTION cbox
+##################################
+filename       devices/ASF_px1/cbox.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+Collidable     devices/ASF_px1/collision_cboxcam.wrl
+Colliding      no
+holds          cam bstop
+
+SECTION cam
+##################################
+filename       devices/ASF_px1/cam.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.4  0 0 1 0.05  0 0 0 1
+
+SECTION bstop
+##################################
+filename       devices/ASF_px1/bstop.wrl
+InitialTrafo   1 0 0 0  0 1 0 -1.401  0 0 1 0.043  0 0 0 1
+AxisDirection  1 0 0 
+Pickable       yes
+Motor          bstop
+Rotational     no
+Collidable     devices/ASF_px1/collision_bstop.wrl
+Colliding      no
+
+SECTION Detector
+##################################
+filename       devices/detector.wrl
+InitialTrafo   0 0 1 0  0 1 0 0  -1 0 0 0  0 0 0 1
+AxisDirection  1 0 0
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Detector
+Rotational     no
+Collidable     devices/collision_detector.wrl
+
+

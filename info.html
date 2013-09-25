@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><!-- Readme file. It has a basic look, but the Swing HTML renderer sucks
+  completely and doesn't go far beyond HTML 3.x ... -->
+
+
+
+    
+  
+  
+  <title>STAC - Readme</title></head>
+
+<body>
+
+
+
+  
+  
+<h1>STAC overview</h1>
+
+
+
+  
+  
+<h2>Reorientation and Strategy Features</h2>
+
+
+
+  
+<p>STAC is a powerful software framework for computer aided
+reorientations of macromolecular crystalline samples. Based on the
+characterization of a single crystal sample, STAC computes robotic
+movements for reaching arbitrary crystal reorientations. Additionally,
+it detrmines strategies for multiple wedge data collections about
+different crystal axes. Integrating with data collection program suits,
+like automateD CollectioN of datA (DNA), multiple crystals can be
+screened about the same crystal axis for better smaple ranking, and also possible to easily collect data from automaticly
+reoriented samples.</p>
+
+
+<h2>Data Format Conversion</h2>
+
+
+
+  
+<p>STAC framework supports crystal characterization inputs from
+various&nbsp;packages (eg: xds, denzo, mosflm, DNA).
+&nbsp;Independently on the
+original input, the crystal characteristics are converted into an
+internal data model which supports all later computations.</p>
+
+
+<h2>Develop the&nbsp;application once, install it on any multi-axis goniometer</h2>
+
+
+
+  
+<p>STAC handles any multi-axis goniometer as of an implementation of
+Abstract Kappa System (AKS), one of the major design adavanteges of
+the EMBL/ESRF MiniKappa. AKS assumes that the rotation devices are
+supported by a 3D pure translation stage. This inverse system introduces flexibility
+in placing the rotation axes in space. Using the easy procedure of
+Translation and Rotation Calibrations, STAC automatically captures
+the&nbsp;differences between the various multi-axis goniometer
+implementations, and allows precise reorientation computations where
+the accuracy is only limited by the operation of the hardware.</p>
+
+<h2>Extendable design</h2>
+
+
+
+  
+<p>STAC is built up of Modules with supporting easy enhancement,
+replacement, and/or extension of the implementations via its
+Plugin-Slot architecture. The currently available Modules cover:&nbsp;</p>
+
+<ul>
+
+  <li>Xtal Reorientation Computation Module</li>
+
+  <li>Data Collection Strategy Computation Module</li>
+
+  <li>Beamline Configuration and Control Module</li>
+
+</ul>
+
+
+
+
+  
+  
+
+<h2>Special Thanks</h2>
+
+
+
+  
+<p>The author(s) are giving special thanks to&nbsp;</p>
+
+<p style="margin-left: 40px;"><span style="font-weight: bold;">Raimond Ravelli</span> for providing the executable form of&nbsp;<span style="font-weight: bold;">strategy</span></p>
+
+<p style="margin-left: 40px;"><span style="font-weight: bold;">Phil Evans</span> for providing <span style="font-weight: bold;">gonset</span> for free</p>
+
+<p style="margin-left: 40px;"><span style="font-weight: bold;">Pierre LeGrand</span> for&nbsp;providing <span style="font-weight: bold;">XO</span> package in python</p>
+
+<p style="margin-left: 40px;"><span style="font-weight: bold;">Matias Guijarro</span> for providing the python module <span style="font-weight: bold;">SpecClient</span></p>
+
+<p>Forthermore, the whole <span style="font-weight: bold; font-style: italic;">Kappa Workgroup</span> is also acknowledged for its conitnous support.</p>
+
+<br>
+
+<p></p>
+
+
+
+  
+  
+</body></html>

@@ -1,0 +1,190 @@
+SECTION virtual_goniometer
+##################################
+#SLS Prigo
+#holds MainFrame Camera Beamstop Detector Xflash
+#holds MainFrame Camera Beamstop DiffDetector Xflash
+holds MainFrame Camera Beamstop DiffDetector Xflash
+
+SECTION MainFrame
+##################################
+filename       devices/mainframe_blue.wrl
+Pickable       no
+Collidable     no
+holds Omega 
+
+SECTION Omega
+##################################
+filename       DUMMY
+AxisDirection  -1 0 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no
+Motor          Omega
+Rotational     yes
+holds Prigo_base 
+
+SECTION Prigo_base
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_BASEBLOCK.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro_PrigoMacro
+MacroConfig    0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Motor          X Y Z Chi Phi
+holds Prigo_slide1 Prigo_slide2 Prigo_slide3 Prigo_slide4 Prigo_schub Prigo_orion Prigo_swing Prigo_phi
+
+SECTION Prigo_slide1
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_SLIDER1.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+holds Prigo_flex1
+
+SECTION Prigo_slide2
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_SLIDER2.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+holds Prigo_flex2
+
+SECTION Prigo_slide3
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_SLIDER3.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+holds Prigo_flex3
+
+SECTION Prigo_slide4
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_SLIDER4.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+
+SECTION Prigo_schub
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_SCHUBSTANGE.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+
+SECTION Prigo_flex1
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_FLEXOR1.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+
+SECTION Prigo_flex2
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_FLEXOR2.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+
+SECTION Prigo_flex3
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_FLEXOR3.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+
+SECTION Prigo_orion
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_ORION.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+
+SECTION Prigo_swing
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_SWING.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+
+SECTION Prigo_phi
+##################################
+filename       devices/SLS/prigo/PRIGO_WRL/PRIGO_PHI.wrl
+InitialTrafo   0 0 1 -0.276  0 1 0 0  -1 0 0 0  0 0 0 1
+Rotational     macro
+holds          Calibpin
+
+SECTION Pin
+##################################
+filename       devices/pin.wrl
+#InitialTrafo   0 0 -1 0  0 1 0 0  1 0 0 0.276  0 0 0 1
+Pickable       no
+Collidable     devices/pin.wrl
+Colliding      yes
+
+
+SECTION Camera
+##################################
+filename       devices/camera.wrl
+Pickable       no
+Collidable     devices/collision_camera2.wrl
+
+SECTION Beamstop
+##################################
+filename       devices/beamstop.wrl
+AxisDirection  0 1 0
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     no devices/beamstop.wrl
+Motor          Beamstop
+Rotational     no
+
+
+SECTION Detector
+##################################
+filename       devices/detector.wrl
+InitialTrafo   1 0 0 0  0 1 0 0  0 0 1 0.1  0 0 0 1
+ActualPosition 0.1
+AxisDirection  0 0 1
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Detector
+Rotational     no
+Collidable     devices/collision_detector.wrl
+
+
+SECTION Xflash
+##################################
+filename       devices/xflash.wrl
+AxisDirection  0.7444631095438562 0.20936840339201263 0.6339870268280271
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Xflash
+Rotational     no
+Collidable     no devices/xflash.wrl
+
+
+SECTION DiffDetector
+##################################
+filename       DUMMY              
+Motor          Detector           
+Rotational     macro_DiffractionDetectorMacro
+MacroConfig    1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.18 0.2 0 0 1 0 0 0                   
+holds          DiffDetBody DiffDetCone       
+
+
+SECTION DiffDetBody
+##################################
+filename       devices/detector.wrl
+Rotational     macro               
+Collidable     devices/collision_detector.wrl
+
+
+SECTION DiffDetCone
+##################################
+filename       DUMMY
+Rotational     macro              
+Collidable     devices/detCone.wrl
+
+
+SECTION Calibpin
+##################################
+filename       devices/calib_pin.wrl
+Pickable       no
+Collidable     no devices/calib_pin.wrl
+Colliding      yes
+holds CalibPeak
+
+SECTION CalibPeak
+##################################
+filename       devices/calib_peak2.wrl
+Pickable       no
+Collidable     no devices/calib_peak.wrl
+Colliding      yes
+AxisLocation   -0.0033 -0.0048 -0.001
+

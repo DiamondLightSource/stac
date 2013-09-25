@@ -1,0 +1,111 @@
+SECTION virtual_goniometer
+##################################
+#Soleil proxima1
+#holds MainFrame Detector
+holds MainFrame DiffDetector
+
+
+SECTION MainFrame
+##################################
+filename       devices/proxima1/base.wrl
+Pickable       no
+Collidable     devices/proxima1/collision_base.wrl
+Colliding      no
+holds Omega Camera
+
+SECTION Camera
+##################################
+filename       devices/camera.wrl
+Pickable       no
+Collidable     devices/proxima1/collision_camera2.wrl
+
+SECTION Omega
+##################################
+filename       devices/proxima1/omega.wrl
+AxisDirection  -1 0.000243 0.00001 
+AxisLocation   0 0 0
+Pickable       yes
+Collidable     devices/proxima1/collision_omega2.wrl
+Colliding      yes
+Motor          Omega
+Rotational     yes
+holds Kappa
+
+SECTION Kappa
+##################################
+filename       devices/proxima1/kappa.wrl
+InitialTrafo   1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1
+ActualPosition 155
+AxisDirection  -0.64289 0.645539 0.412276 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Kappa
+Rotational     yes
+Collidable     devices/proxima1/collision_kappa2.wrl
+Colliding      yes
+CalibrateVia   Omega
+holds Phi
+
+SECTION Phi
+##################################
+filename       devices/proxima1/phi.wrl
+AxisDirection  0.122894 0.626658 0.769544 
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Phi
+Rotational     yes
+Collidable     devices/proxima1/collision_phi3.wrl
+Colliding      yes
+holds Pin
+
+SECTION Pin
+##################################
+filename       devices/proxima1/pin.wrl
+Pickable       no
+Collidable     no devices/calib_pin.wrl
+Colliding      yes
+
+SECTION CalibPeak
+##################################
+filename       devices/calib_peak.wrl
+Pickable       no
+Collidable     no devices/calib_peak.wrl
+Colliding      yes
+
+
+SECTION Detector
+##################################
+filename       devices/detector.wrl
+InitialTrafo   1 0 0 0  0 1 0 0  0 0 1 0.2  0 0 0 1
+ActualPosition 0.2
+AxisDirection  0 0 1
+AxisLocation   0 0 0
+Pickable       yes
+Motor          Detector
+Rotational     no
+Collidable     devices/collision_detector.wrl
+
+
+SECTION DiffDetector
+##################################
+filename       DUMMY              
+Motor          Detector           
+Rotational     macro_DiffractionDetectorMacro
+MacroConfig    1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.18 0.2 0 0 1 0 0 0                   
+holds          DiffDetBody DiffDetCone       
+
+
+SECTION DiffDetBody
+##################################
+filename       devices/detector.wrl
+Rotational     macro               
+Collidable     devices/collision_detector.wrl
+
+
+SECTION DiffDetCone
+##################################
+filename       DUMMY
+Rotational     macro              
+Collidable     devices/detCone.wrl
+
+

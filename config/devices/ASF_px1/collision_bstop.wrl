@@ -1,0 +1,68 @@
+#VRML V2.0 utf8
+
+# This file was authored with Blender (http://www.blender.org/)
+# Blender version 245
+# Blender file asf_px1.blend
+# Exported using VRML97 exporter v1.55 (2006/01/17)
+
+
+NavigationInfo {
+	headlight FALSE
+	visibilityLimit 100.0
+	type ["EXAMINE", "ANY"]
+	avatarSize [0.25, 1.75, 0.75]
+} 
+ 
+Background {
+	groundColor 0.0565629 0.2208154 0.4
+	skyColor 0.0565629 0.2208154 0.4
+}
+
+DEF OB_Cube_001 Transform {
+	translation 0.064006 1.400925 0.042783
+	rotation 1.000000 0.000000 0.000000 0.000000
+	scale 1.000000 1.000000 1.000000
+	children [
+		DEF ME_Cube_001 Group {
+			children [
+				Shape {
+					appearance Appearance {
+				material Material {
+            		transparency 1.000000
+#					diffuseColor 0.607843 0.729412 0.815686
+#					ambientIntensity 0.200000
+#					specularColor 0.607843 0.729412 0.815686
+#					emissiveColor 0.000000 0.000000 0.000000
+#					shininess 0.312500
+#					transparency 0.000000
+				}
+					}
+					geometry IndexedFaceSet {
+						solid TRUE
+						coord DEF coord_Cube_001 Coordinate {
+							point [
+0.0108814463019 -0.00249824114144 -0.0887078493834
+ 0.0108814463019 -0.00249824114144 0.0383705608547
+ -0.00893186405301 -0.00249824114144 0.0383705608547
+ -0.00893186405301 -0.00249824114144 -0.0887078493834
+ 0.0108814463019 0.00210832478479 -0.0887078493834
+ 0.0108814463019 0.00210832478479 0.0383705608547
+ -0.00893186405301 0.00210832478479 0.0383705608547
+ -0.00893186405301 0.00210832478479 -0.0887078493834
+ 							]
+						}
+						
+						coordIndex [
+0 1 2 3 -1, 
+4 7 6 5 -1, 
+0 4 5 1 -1, 
+1 5 6 2 -1, 
+2 6 7 3 -1, 
+4 0 3 7 -1, 
+						]
+					}
+				}
+			]
+		}
+	]
+}

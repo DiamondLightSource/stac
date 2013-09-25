@@ -1,0 +1,114 @@
+#VRML V2.0 utf8
+WorldInfo {
+ title "beamstop"
+ info ["This Web3D Content was created with Flux Studio, a Web3D authoring tool"
+ "www.mediamachines.com"
+ "File produced by AccuTrans 3D"]
+}
+## Vizthumbnail  Thumb_phi_wrl31939681194873631.jpg
+DEF KGoni-PhiBlock_GoniHead Group {
+ children [
+  Shape {
+   appearance Appearance {
+    material DEF PHIBLOCK_MAT Material {
+     ambientIntensity .5
+     diffuseColor .75 .55 .1
+     shininess .2
+     specularColor .3 .3 .3
+     transparency 0
+     emissiveColor 0 0 0
+    }
+   }
+  }
+  Transform {
+   translation 0 0 .0706
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE PHIBLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.005
+      radius 0.020
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .0656
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE PHIBLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.005
+      radius 0.030
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .0564
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE PHIBLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.014
+      radius 0.020
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .04135
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE PHIBLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.017
+      radius 0.013
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .0247
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE PHIBLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.017
+      radius 0.005
+     }
+    }
+   ]
+  }
+  Transform {
+   translation 0 0 .009
+   rotation 1 0 0 1.571
+   children [
+    Shape {
+     appearance Appearance {
+      material USE PHIBLOCK_MAT
+     }
+     geometry Cylinder {
+      height 0.016
+      radius 0.001
+     }
+    }
+   ]
+  }
+ ]
+}
