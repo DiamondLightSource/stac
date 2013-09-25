@@ -830,7 +830,7 @@ public class StacMainWin
     panelMAHead.add(Box.createRigidArea(new Dimension(10,10)));
     //init
     jButtonMA_init.setText("Init Motors");
-    jButtonMA_init.setPreferredSize(new Dimension(100,34));
+    jButtonMA_init.setPreferredSize(new Dimension(120,34));
     jButtonMA_init.setToolTipText("Initializing the Motors");
     jButtonMA_init.addActionListener(new StacMainWin_jMainButton_actionAdapter(this));
     jButtonMA_init.setEnabled(true);
